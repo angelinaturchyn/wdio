@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 exports.config = {
     specs: [
         './specs/**/*.spec.js'
@@ -10,7 +12,7 @@ exports.config = {
     }],
     logLevel: 'info',
     bail: 0,
-    baseUrl: 'https://kompot.us',
+    baseUrl: process.env.BASE_URL,
 
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
