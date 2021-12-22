@@ -10,7 +10,7 @@ exports.config = {
     }],
     logLevel: 'info',
     bail: 0,
-    baseUrl: 'http://localhost',
+    baseUrl: 'https://kompot.us',
 
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
@@ -22,5 +22,12 @@ exports.config = {
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000
+    },
+    before: async function (capabilities, specs, browser){
+       browser.addCommand('smartClear', async function (){
+          const text =  await this.getText();
+          for(let char of text)
+              this.keys('Backspace');
+       }, true)
     },
 }
