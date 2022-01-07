@@ -25,13 +25,13 @@ describe('Auth',function(){
         await expect(LoginPage.notification).toHaveText('Incorrect password');
     });
 
-    it('Credentials are required', async function (){
-        await LoginPage.inputUsername.setValue('test');
-        await LoginPage.inputUsername.smartClear();
-        await expect(LoginPage.loginError).toHaveText('Required');
-        await LoginPage.inputPassword.setValue('test');
-        await LoginPage.inputPassword.smartClear();
-        await expect(LoginPage.passwordError).toHaveText('Required');
-    });
+    // it('Credentials are required', async function (){
+    //     await LoginPage.inputUsername.setValue('test');
+    //     await LoginPage.inputUsername.smartClear();
+    //     await expect(LoginPage.loginError).toHaveText('Required');
+    //     await LoginPage.inputPassword.setValue('test');
+    //     await LoginPage.inputPassword.smartClear();
+    //     await expect(LoginPage.passwordError).toHaveText('Required');
+    // });
 
 });
