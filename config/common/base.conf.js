@@ -6,12 +6,6 @@ exports.config = {
     specs: [
         './specs/**/*.spec.js'
     ],
-    maxInstances: 1,
-    capabilities: [{
-        maxInstances: 1,
-        browserName: 'chrome',
-        acceptInsecureCerts: true
-    }],
     logLevel: 'info',
     bail: 0,
     baseUrl: process.env.BASE_URL,
