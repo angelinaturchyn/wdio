@@ -1,4 +1,6 @@
-require('dotenv').config();
+import {config} from 'dotenv';
+import hooks from './hooks.conf';
+config();
 
 exports.config = {
     specs: [
@@ -18,18 +20,12 @@ exports.config = {
     connectionRetryTimeout: 120000,
     connectionRetryCount: 1,
 
-    services: ['devtools'],
+    services: ['devtools', 'geckodriver'],
     reporters: ['spec'],
     framework: 'mocha',
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000
     },
-    before: async function (capabilities, specs, browser){
-       browser.addCommand('smartClear', async function (){
-          const text =  await this.getText();
-          for(let char of text)
-              this.keys('Backspace');
-       }, true)
-    },
+   ...hooks,
 }

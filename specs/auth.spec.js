@@ -32,6 +32,7 @@ describe('Auth',function(){
         await LoginPage.inputPassword.setValue('test');
         await LoginPage.inputPassword.smartClear();
         await expect(LoginPage.passwordError).toHaveText('Required');
+
     });
 
 });
