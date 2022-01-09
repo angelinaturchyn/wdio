@@ -25,11 +25,11 @@ exports.config = {
         ui: 'bdd',
         timeout: 60000
     },
-    // before: async function (capabilities, specs, browser){
-    //    browser.addCommand('smartClear', async function (){
-    //       const text =  await this.getText();
-    //       for(let char of text)
-    //           this.keys('Backspace');
-    //    }, true)
-    //}
+    before: async function (capabilities, specs, browser){
+       browser.addCommand('smartClear', async function (){
+          const text =  await this.getValue();
+          for(let char of text)
+              this.keys('Backspace');
+       }, true)
+    }
 }
