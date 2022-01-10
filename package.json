@@ -19,5 +19,8 @@
         "@wdio/mocha-framework": "^7.16.6",
         "@wdio/spec-reporter": "^7.16.9",
         "dotenv": "^10.0.0"
+    },
+    "dependencies": {
+        "minifaker": "^1.31.0"
     }
 }
