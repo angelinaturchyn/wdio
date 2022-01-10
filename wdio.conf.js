@@ -31,5 +31,5 @@ exports.config = {
           for(let char of text)
               this.keys('Backspace');
        }, true)
-    },
+    }
 }
