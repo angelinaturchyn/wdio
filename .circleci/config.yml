@@ -1,0 +1,25 @@
+version: 2.1
+
+
+orbs:
+  node: circleci/node@4.7
+
+  jobs:
+    build-and-test:
+      docker:
+        -image: circleci/node:latest-browsers
+      steps:
+        - checkout
+        - run:
+            name: Install dependencies
+            command:
+               npm i
+        - run:
+            name: Run tests
+            command:
+               npm run test:chrome:headless
+workflows:
+  commit:
+    jobs:
+      - build-and-test
+
