@@ -21,10 +21,10 @@ const {userDetails} = require('../components/data')
             await browser.pause()
         });
 
-        it('deletion', async function(){
-            await ClientsPage.deleteClient(email);
-            await expect(ClientsPage.getItemByEmail(email)).not.toBeExisting()
-        })
+        // it('deletion', async function(){
+        //     await ClientsPage.deleteClient(email);
+        //     await expect(ClientsPage.getItemByEmail(email)).not.toBeExisting()
+        // })
 
     });
 
