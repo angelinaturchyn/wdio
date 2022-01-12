@@ -3,7 +3,10 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "test": "wdio run wdio.conf.js"
+        "test:chrome": "npx wdio run ./config/chrome.conf.js",
+        "test:chrome:headless": "npx wdio run ./config/chrome.headless.conf.js",
+        "test:firefox": "npx wdio run ./config/firefox.conf.js",
+        "test:firefox:headless": "npx wdio run ./config/firefox.headless.conf.js"
     },
     "keywords": [],
     "author": "Angelina T",
@@ -19,5 +22,8 @@
         "@wdio/mocha-framework": "^7.16.6",
         "@wdio/spec-reporter": "^7.16.9",
         "dotenv": "^10.0.0"
+    },
+    "dependencies": {
+        "deepmerge": "^4.2.2"
     }
 }
