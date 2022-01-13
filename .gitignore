@@ -1,4 +1,6 @@
 node_modules
+allure-report
+allure-results
 .idea
 package-lock.json
 .env
