@@ -28,6 +28,7 @@
         "dotenv": "^10.0.0"
     },
     "dependencies": {
+
         "allure-commandline": "^2.17.2",
         "deepmerge": "^4.2.2"
     }
