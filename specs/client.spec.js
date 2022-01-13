@@ -14,11 +14,13 @@ const {userDetails} = require('../components/data')
 
         it('creation', async function(){
            await ClientsPage.createClient.click();
-           await ClientsPage.clientCreation.firstName.setValue(userDetails.firstName)
+            await expect(ClientsPage.clientCreation.buttonSave).toBeDisabled();
+            await ClientsPage.clientCreation.firstName.setValue(userDetails.firstName)
             await ClientsPage.clientCreation.lastName.setValue(userDetails.lastName)
             await ClientsPage.clientCreation.email.setValue(userDetails.email)
             await ClientsPage.clientCreation.buttonSave.click()
-            await browser.pause()
+             //await expect(ClientsPage.getItemByEmail(email)).toBeDisplayed();
+
         });
 
         // it('deletion', async function(){
