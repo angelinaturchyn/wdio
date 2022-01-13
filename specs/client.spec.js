@@ -2,8 +2,8 @@ import LoginPage from '../pages/login.page';
 import ProfilePage from "../pages/profile.page";
 import ClientsPage from "../pages/clients.page";
 
-import minifaker, { array, name, email} from 'minifaker'
-import 'minifaker/dist/locales/en'
+const {userDetails} = require('../components/data')
+
 
     describe('Client', function(){
         before(async function(){
@@ -14,11 +14,13 @@ import 'minifaker/dist/locales/en'
 
         it('creation', async function(){
            await ClientsPage.createClient.click();
-           await ClientsPage.clientCreation.firstName.setValue(minifaker.firstName('female'))
-            await ClientsPage.clientCreation.lastName.setValue(minifaker.lastName('female'))
-            await ClientsPage.clientCreation.email.setValue(minifaker.email('female'))
+            await expect(ClientsPage.clientCreation.buttonSave).toBeDisabled();
+            await ClientsPage.clientCreation.firstName.setValue(userDetails.firstName)
+            await ClientsPage.clientCreation.lastName.setValue(userDetails.lastName)
+            await ClientsPage.clientCreation.email.setValue(userDetails.email)
             await ClientsPage.clientCreation.buttonSave.click()
-            await browser.pause()
+             //await expect(ClientsPage.getItemByEmail(email)).toBeDisplayed();
+
         });
 
         // it('deletion', async function(){
