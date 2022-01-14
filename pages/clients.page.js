@@ -18,6 +18,8 @@ class ClientsPage extends AppPage {
   //       await itemDelete.click();
   //   }
   //
+
+  //
   //   async getItemByEmail(email){
   //       return $('//tr[.//a[.="${email}"]]')
   //   }
