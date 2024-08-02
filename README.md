@@ -54,14 +54,14 @@ Feature: Example feature
     Given I open the Google homepage
     When I search for "WebdriverIO"
     Then I should see results containing "WebdriverIO"
+```
 
 
 ### Step Definitions
 
 Create a file example.steps.js in the ./features/step_definitions directory:
 
-```
-const { Given, When, Then } = require('@cucumber/cucumber');
+```const { Given, When, Then } = require('@cucumber/cucumber');
 const assert = require('assert');
 
 Given('I open the Google homepage', async () => {
@@ -79,7 +79,6 @@ Then('I should see results containing {string}', async (expectedTerm) => {
     const text = await results.getText();
     assert(text.includes(expectedTerm));
 });
-
 ```
 
 ### Running Tests
