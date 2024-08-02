@@ -1,37 +1,50 @@
-WebdriverIO with Cucumber (Gherkin) Project
+# WebdriverIO with Cucumber (Gherkin) Project
+
 This project demonstrates the setup and use of WebdriverIO with Cucumber (Gherkin) for writing automated browser tests in JavaScript.
 
-Prerequisites
+## Prerequisites
+
 Before you begin, ensure you have met the following requirements:
 
-Node.js installed (version 14 or later)
-npm or yarn installed
-Setup
-Clone the repository:
+- Node.js installed (version 14 or later)
+- npm or yarn installed
 
-git clone https://github.com/angelinaturchyn/webdriverIO-tests
-cd webdriverio-cucumber-example
+## Setup
 
-Install dependencies:
+1. **Clone the repository:**
 
-Using npm:
+    ```sh
+    git clone https://github.com/angelinaturchyn/webdriverIO-tests
+    cd webdriverio-cucumber-example
+    ```
 
-npm install
-Using yarn:
+2. **Install dependencies:**
 
-yarn install
-Configuration:
+    Using npm:
 
-The wdio.conf.js file contains the configuration for WebdriverIO. It is pre-configured to use Cucumber with Gherkin syntax.
+    ```sh
+    npm install
+    ```
 
-Writing Tests
-Tests are written in Gherkin syntax and placed in the ./features directory.
+    Using yarn:
 
-Sample Feature File
-Create a file example.feature in the ./features directory:
+    ```sh
+    yarn install
+    ```
 
-gherkin
+3. **Configuration:**
 
+    The `wdio.conf.js` file contains the configuration for WebdriverIO. It is pre-configured to use Cucumber with Gherkin syntax.
+
+## Writing Tests
+
+Tests are written in Gherkin syntax and placed in the `./features` directory.
+
+### Sample Feature File
+
+Create a file `example.feature` in the `./features` directory:
+
+```gherkin
 Feature: Example feature
   As a user
   I want to perform a basic test
@@ -41,11 +54,13 @@ Feature: Example feature
     Given I open the Google homepage
     When I search for "WebdriverIO"
     Then I should see results containing "WebdriverIO"
-Step Definitions
+
+
+### Step Definitions
+
 Create a file example.steps.js in the ./features/step_definitions directory:
 
-javascript
-
+```
 const { Given, When, Then } = require('@cucumber/cucumber');
 const assert = require('assert');
 
@@ -64,13 +79,20 @@ Then('I should see results containing {string}', async (expectedTerm) => {
     const text = await results.getText();
     assert(text.includes(expectedTerm));
 });
-Running Tests
+
+```
+
+### Running Tests
+
 To execute the tests, use the following command:
 
-npx wdio run wdio.conf.js
-Project Structure
-go
+``` npx wdio run wdio.conf.js ```
 
+
+### Project Structure
+
+
+```
 ├── features
 │   ├── example.feature
 │   └── step_definitions
@@ -78,10 +100,6 @@ go
 ├── wdio.conf.js
 ├── package.json
 └── README.md
-Contributing
-Contributions are welcome! Please submit a pull request or open an issue for any changes or suggestions.
 
-License
-This project is licensed under the MIT License.
+```
 
-Feel free to customize the project and the README file to suit your specific needs. If you have any questions or need further assistance, let me know!
